@@ -1,20 +1,48 @@
 <html>
-
-<head>
+  <head>
     <title>es 1</title>
+    <body>
+      <button onclick="console.log('click da evento')">
+        cliccami da evento
+      </button>
+      <button onclick="funzioneClick()">cliccami da script</button>
+      <button id="btn3">click da ascoltatore</button>
 
-<body>
+      <div id="1">
+        <p>non premere click da script per cortesia</p>
+      </div>
 
+      <script>
+        var funzioneDaStringa = function (stringa) {
+          console.log("click da stringa:" + stringa);
+        };
+        var funzioneClick = function () {
+          console.log("click da script");
+        };
+        var funzioneClickDascoltatore = function () {
+          console.log("da listener");
+          var s = false;
 
+          if ((s ==false)) {
+            s = true;
+            document.getElementById("1").setAttribute("style", "color: red");
+            document.getElementById("1").innerHTML =
+              "<h1> ti avevo detto di non premere</h1>";
+          } else if (s == true) {
+            s = false;
+            document.getElementById().innerHTML("1");
+          }
+        };
 
+        // function(){
+        // bottone3.setAttribute("style","background-color: red");
+        // }
 
-</body>
+        var bottone3 = document.getElementById("btn3");
+        bottone3.addEventListener("click", funzioneClickDascoltatore);
 
-
-</head>
-
-
-
-
-
+        // funzioneClick();             //posso dichiarare una funzione ed eseguirla
+      </script>
+    </body>
+  </head>
 </html>
